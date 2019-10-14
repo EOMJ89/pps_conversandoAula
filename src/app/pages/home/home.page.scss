@@ -1,0 +1,28 @@
+.buttons {
+  border: none;
+  border-radius: 1rem;
+  background-color: #361134;
+  color: white;
+  text-align: center;
+  background-position: center;
+  transition: background 0.8s;
+
+  &-a {
+    background-color: #ea2741;
+  }
+  &-b {
+    background-color: #61d14b;
+  }
+}
+
+.buttons:active {
+  background-size: 100%;
+  transition: background 0s;
+  background-color: #f391a0;
+  color: black;
+}
+
+.bold {
+  font-size: 3.5rem;
+  font-weight: bold;
+}

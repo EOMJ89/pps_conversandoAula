@@ -2,6 +2,14 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+
+@font-face {
+  font-family: "Florida Project";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/florida-project/Florida\ Project\ Phase\ One.otf");
+}
+
 :root {
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -74,4 +82,33 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  .ion-color-cerisepink {
+    --ion-color-base: #ffe6e6;
+    --ion-color-base-rgb: 255, 230, 230;
+    --ion-color-contrast: #000000;
+    --ion-color-contrast-rgb: 0, 0, 0;
+    --ion-color-shade: #e0caca;
+    --ion-color-tint: #ffe9e9;
+  }
+
+  .ion-color-pantenered {
+    --ion-color-base: #ea2741;
+    --ion-color-base-rgb: 234, 39, 65;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #ce2239;
+    --ion-color-tint: #ec3d54;
+  }
+
+  .ion-color-pastelgreen {
+    --ion-color-base: #7fd16e;
+    --ion-color-base-rgb: 127, 209, 110;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #70b861;
+    --ion-color-tint: #8cd67d;
+  }
+
+  --ion-font-family: "Florida Project";
 }

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar class="toolbar-chats">
+    <ion-buttons slot="start">
+      <ion-button (click)="irHome()" color="pantenered">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarSesion()" color="pantenered">
+        <ion-icon slot="start" name="power"></ion-icon>
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Chat A</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-chat">
+  <div class="height-100 width-100 list-grid">
+    <div *ngFor="let mensaje of this.mensajes" [ngClass]="{
+      'justify-end': this.verificar(mensaje),
+      'justify-start': !this.verificar(mensaje)
+      }" class="width-100 list-item">
+      <div class="message" [ngClass]="{
+        'message-mine': this.verificar(mensaje) }">
+        <div class="message-user">{{mensaje.usuario}}</div>
+        <div class="message-text">{{mensaje.mensaje}}</div>
+        <div class="message-date">{{mensaje.fecha | date : 'dd/MM/yyyy, HH:mm'}}</div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="flex-h center-horizontal center-vertical bg">
+    <div class="width-70 height-100">
+      <form [formGroup]="this.formGroup">
+        <ion-item class="chat-item">
+          <ion-label position="floating">Mensaje
+            <span *ngIf="this.formGroup.controls.mensaje.errors &&
+              this.formGroup.controls.mensaje.errors.maxlength != null">
+              (limite de carácteres alcanzado)</span>
+          </ion-label>
+          <ion-input type="text" formControlName="mensaje"></ion-input>
+        </ion-item>
+      </form>
+    </div>
+    <div class="width-30 height-100 center-vertical center-horizontal">
+      <ion-button [disabled]="!this.formGroup.valid" (click)="enviarMensaje()"
+        color="pantenered" expand="block">Enviar</ion-button>
+    </div>
+  </div>
+</ion-footer>
